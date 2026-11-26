@@ -20,11 +20,17 @@
     </form>
 
     <h3>Recent Comments</h3>
-
+		<?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
     <div class="comment">
-        <h4>Ashen</h4>
-        <p>This is a great website!</p>
-    </div>
+            <h4>
+                <?php echo htmlspecialchars($row['user']); ?>
+            </h4>
+
+            <p>
+                <?php echo htmlspecialchars($row['comment']); ?>
+            </p>
+        </div>
+		<?php } ?>
 
     <div class="comment">
         <h4>John</h4>
